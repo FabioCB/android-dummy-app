@@ -1,6 +1,5 @@
 package com.example.android.justjava;
 
-import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -28,11 +27,11 @@ public class EspressoExample {
     @Test
     public void checkOrder(){
         ViewInteraction quantity = onView(withId(R.id.quantity_text_view));
-        quantity.check(matches(withText("0")));
+        quantity.check(matches(withText("2")));
 
         onView(withId(R.id.order_button)).perform(click());
 
-        quantity.check(matches(withText("1")));
+        quantity.check(matches(withText("2")));
 
     }
 
