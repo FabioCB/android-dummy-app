@@ -9,7 +9,7 @@ import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    int quantity =2;
+    int quantity = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = quantity * 5;
-        String priceMessage = "Total: $" + price;
-        priceMessage = priceMessage +"\nThank you!";
+        TextView nameView = (TextView) findViewById(R.id.name_text_view);
+        String priceMessage = "Thank you " + nameView.getText() + "\nYour total is: " + price + "€";
         displayMessage(priceMessage);
     }
 
@@ -44,13 +44,13 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
-    public void increment(View view){
-        quantity = quantity+1;
+    public void increment(View view) {
+        quantity = quantity + 1;
         display(quantity);
     }
 
-    public void decrement(View view){
-        quantity =quantity -1;
+    public void decrement(View view) {
+        quantity = quantity - 1;
         display(quantity);
     }
 
