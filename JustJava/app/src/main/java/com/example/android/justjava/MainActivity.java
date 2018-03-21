@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
-
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 2;
@@ -22,26 +20,17 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = quantity * 5;
-        TextView nameView = (TextView) findViewById(R.id.name_text_view);
-        String priceMessage = "Thank you " + nameView.getText() + "\nYour total is: " + price + "€";
-        displayMessage(priceMessage);
+        int price = calculatePrice();
+        displayMessage(createOrderSummary(price));
+
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void displayQuantity(int number) {
+    private void displayQuantity(int quantity) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
-    }
-
-    /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        quantityTextView.setText("" + quantity);
     }
 
     public void increment(View view) {
@@ -60,5 +49,20 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
+    }
+
+    /**
+     * Calculates the price of the order.
+     */
+    private int calculatePrice() {
+        return quantity * 5;
+    }
+
+    /**
+     * Creates the Order Summary text.
+     */
+    private String createOrderSummary(int price) {
+        TextView nameView = (TextView) findViewById(R.id.name_text_view);
+        return "Thank you " + nameView.getText() + "\nYour total is: " + price + "€";
     }
 }
