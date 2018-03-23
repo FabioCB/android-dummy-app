@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addTwoForTeamB(View view) {
-        scoreTeamB = scoreTeamB + 1;
+        scoreTeamB = scoreTeamB + 2;
         displayForTeamB(scoreTeamB);
     }
 
