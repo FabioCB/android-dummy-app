@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Team A.
      */
     public void displayForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
+        TextView scoreView = findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Team B.
      */
     public void displayForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        TextView scoreView = findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addTwoForTeamB(View view) {
-        scoreTeamB = scoreTeamB + 2;
+        scoreTeamB = scoreTeamB + 1;
         displayForTeamB(scoreTeamB);
     }
 
