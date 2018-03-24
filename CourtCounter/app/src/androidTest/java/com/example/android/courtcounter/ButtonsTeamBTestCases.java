@@ -28,7 +28,7 @@ public class ButtonsTeamBTestCases {
     private final int TEAM_B_SCORE = R.id.team_b_score;
 
     @Test
-    public void test1PointTeamA() {
+    public void test1PointTeamB() {
         onView(withId(ONE_POINT_BUTTON))
                 .check(matches(allOf(isDisplayed(), withText("Free throw"))))
                 .perform(click());
@@ -39,7 +39,7 @@ public class ButtonsTeamBTestCases {
     }
 
     @Test
-    public void test2PointsTeamA() {
+    public void test2PointsTeamB() {
         onView(withId(TWO_POINT_BUTTON))
                 .check(matches(allOf(isDisplayed(), withText("+2 Points"))))
                 .perform(click());
@@ -50,7 +50,7 @@ public class ButtonsTeamBTestCases {
     }
 
     @Test
-    public void test3PointsTeamA() {
+    public void test3PointsTeamB() {
         onView(withId(THREE_POINT_BUTTON))
                 .check(matches(allOf(isDisplayed(), withText("+3 Points"))))
                 .perform(click());
